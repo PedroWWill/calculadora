@@ -1,6 +1,36 @@
-h1 {
-    color:crimson;
-    text-align: center;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(https://media1.tenor.com/m/CaAWvs4oRDsAAAAC/mathematics-numbers.gif);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+.texto {
+    text-align: center;
+    font-size: 75px;
+    color: beige;
+}
 
+h1 {
+    text-align: center;
+    text-decoration: underline gray;
+    color:lightslategrey
+}
+
+.calculadora {
+    padding: 2%;
+    border-radius: 50px;
+    background-color: white;
+    width: 550px;
+    justify-content: center;
+}
+
+.tela {
+    background-color: gray;
+    width: 450px;
+    padding: 10px;
+    border-radius: 10px;
+}
