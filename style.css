@@ -1,33 +1,64 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url(https://media1.tenor.com/m/CaAWvs4oRDsAAAAC/mathematics-numbers.gif);
-    background-size: cover;
-    background-attachment: fixed;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-image: url(https://media1.tenor.com/m/CaAWvs4oRDsAAAAC/mathematics-numbers.gif);
+   background-size: cover;
+   background-attachment: fixed;
 }
 
-.texto {
-    text-align: center;
-    font-size: 75px;
-    color: beige;
+.t1 {
+   margin: 0;
+   text-decoration: underline gray;
+   text-align: center;
+   font-size: 65px;
+   color: beige;
 }
 
-h1 {
-    text-align: center;
-    text-decoration: underline gray;
-    color:lightslategrey
+.t2 {
+   margin-top: 0;
+   margin-bottom: 50px;
+   text-align: center;
+   text-decoration: underline gray;
+   color:lightslategrey
 }
 
 .calculadora {
-    padding: 2%;
-    border-radius: 50px;
-    background-color: white;
-    width: 550px;
-    justify-content: center;
+   padding: 2%;
+   border-radius: 15px;
+   background-color: white;
+   width: 600px;
+   justify-content: center;
+   height: 450px;
+  
 }
 
+.botao {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* 4 colunas de largura igual */
+   width: 100%;
+   gap: 16px; /* Espaço entre os botões */
+   margin: 0 auto; /* Centraliza horizontalmente */
+}
 
+.botao button {
+   font-size: 20px;
+   border: 2px black;
+   padding: 20px;
+}
 
+.tela {
+   display: flex;
+   height: 70px;
+   width: 575px;
+   background-color: lightgray;
+   border-radius: 100px;
+   padding: 2%; /*preenchimento interno*/ 
+   margin-bottom: 50px; /*espaço entre a tela e os botões*/
+   justify-content: flex-end; /* Alinha o conteúdo à direita */   
+   align-items: center; /* Centraliza verticalmente */
+   font-size: 30px;
+   
+}
 
