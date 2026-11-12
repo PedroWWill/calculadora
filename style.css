@@ -1,3 +1,8 @@
+/* Reseta o modelo de caixa para garantir responsividade sem transbordar */
+* {
+   box-sizing: border-box;
+}
+
 body {
    display: flex;
    flex-direction: column;
@@ -6,59 +11,95 @@ body {
    background-image: url(https://media1.tenor.com/m/CaAWvs4oRDsAAAAC/mathematics-numbers.gif);
    background-size: cover;
    background-attachment: fixed;
+   margin: 0;
+   padding: 20px; /* Margem interna para telas pequenas não colarem nas bordas */
+   min-height: 100vh;
+}
+
+header {
+   text-align: center;
 }
 
 .t1 {
    margin: 0;
    text-decoration: underline gray;
-   text-align: center;
    font-size: 65px;
    color: beige;
 }
 
 .t2 {
-   margin-top: 0;
-   margin-bottom: 50px;
-   text-align: center;
+   margin-top: 10px;
+   margin-bottom: 30px;
    text-decoration: underline gray;
-   color:lightslategrey
+   color: lightslategrey;
+   font-size: 24px;
 }
 
 .calculadora {
-   padding: 2%;
+   padding: 20px;
    border-radius: 15px;
    background-color: white;
-   width: 600px;
-   justify-content: center;
-   height: 450px;
-  
-}
-
-.botao {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr); /* 4 colunas de largura igual */
+   /* Uso de max-width e 100% no lugar de larguras fixas (Responsividade) */
    width: 100%;
-   gap: 16px; /* Espaço entre os botões */
-   margin: 0 auto; /* Centraliza horizontalmente */
-}
-
-.botao button {
-   font-size: 20px;
-   border: 2px black;
-   padding: 20px;
+   max-width: 450px; 
+   display: flex;
+   flex-direction: column;
 }
 
 .tela {
    display: flex;
    height: 70px;
-   width: 575px;
+   width: 100%; /* Adapta-se ao container */
    background-color: lightgray;
-   border-radius: 100px;
-   padding: 2%; /*preenchimento interno*/ 
-   margin-bottom: 50px; /*espaço entre a tela e os botões*/
-   justify-content: flex-end; /* Alinha o conteúdo à direita */   
-   align-items: center; /* Centraliza verticalmente */
+   border-radius: 50px; /* Bordas ajustadas para caber em mobile */
+   padding: 0 20px;
+   margin-bottom: 30px;
+   justify-content: flex-end;
+   align-items: center;
    font-size: 30px;
-   
+   overflow-x: auto; /* Adiciona rolagem na tela se o número for gigante */
 }
 
+.botao {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   width: 100%;
+   gap: 12px;
+}
+
+.botao button {
+   font-size: 20px;
+   border: 2px solid black; /* Corrigido border inválido anterior */
+   padding: 15px;
+   border-radius: 8px; /* Dá uma estética mais moderna */
+   cursor: pointer;
+}
+
+footer {
+   margin-top: 30px;
+   color: beige;
+   font-size: 14px;
+}
+
+/* MEDIA QUERIES - Regras obrigatórias para Mobile */
+@media (max-width: 600px) {
+   .t1 {
+       font-size: 40px;
+   }
+   .t2 {
+       font-size: 16px;
+       margin-bottom: 20px;
+   }
+   .calculadora {
+       padding: 15px;
+   }
+   .botao button {
+       padding: 12px 5px; /* Reduz enchimento dos botões */
+       font-size: 18px;
+   }
+   .tela {
+       height: 60px;
+       font-size: 24px;
+       margin-bottom: 20px;
+   }
+}
